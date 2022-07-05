@@ -28,6 +28,6 @@ public class DayWithMaximumNumberStatisticsMaker implements IStatisticsMaker {
             }
         }
 
-        return new Statistics("The most popular day (with maximum number of cyclists passed) ", result);
+        return new Statistics("The most popular day (with maximum number of cyclists passed)", result);
     }
 }

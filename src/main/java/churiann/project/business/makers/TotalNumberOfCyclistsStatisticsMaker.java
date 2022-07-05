@@ -14,7 +14,7 @@ public class TotalNumberOfCyclistsStatisticsMaker implements IStatisticsMaker {
             totalNumberOfCyclists += record.getNumberOfCyclists();
         }
         return new Statistics(
-                "the total number of recorded cyclist passes",
+                "The total number of recorded cyclist passes",
                 String.valueOf(totalNumberOfCyclists));
     }
 }
