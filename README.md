@@ -1,6 +1,6 @@
 ## **Statictics Application**
 
-This application allows to create statistics of cyclists.
+This application allows to create statistics of cyclists. It is comand-line program with several input parameters.
 
 **Input parameters**:
 
