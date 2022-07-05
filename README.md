@@ -2,29 +2,29 @@
 
 This application allows to create statistics of cyclists. It is comand-line program with several input parameters.
 
-**Input parameters**:
+#### **Input parameters**:
 
-1.  "nameOfFile.csv"
+1.  *"nameOfFile.csv"*
 
-2.  "list of required statistics" 
+2.  *"list of required statistics"*
     
-    MT - The most traveled section
+    **MT** - The most traveled section
     
-    DM - The most popular day (with maximum number of cyclists passed)
+    **DM** - The most popular day (with maximum number of cyclists passed)
     
-    AN - Average number of cyclists passed per day
+    **AN** - Average number of cyclists passed per day
     
-    TN - the total number of recorded cyclist passes
+    **TN** - the total number of recorded cyclist passes
     
     Example: "DM,TN"
 
-3.  "list of formats"
+3.  *"list of formats"*
     
-    CSV and JSON are available
+    **CSV** and **JSON** are available
     
     Example: "CSV,JSON"
 
-**Output**:
+#### **Output**:
 
 Output is files in required formats with all of the statistics that were made. 
     
