@@ -26,7 +26,7 @@ public class MostTraveledSectionStatisticsMaker implements IStatisticsMaker {
         for (Map.Entry<Pair<String, String>, Integer> section : sections.entrySet()) {
             if (max < section.getValue()) {
                 max = section.getValue();
-                result = section.getKey().getRight() + "to" + section.getKey().getLeft();
+                result = section.getKey().getRight() + " to " + section.getKey().getLeft();
             }
         }
         return new Statistics("The most traveled section", result);

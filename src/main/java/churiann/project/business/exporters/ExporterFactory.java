@@ -1,4 +1,4 @@
-package churiann.project.business.export;
+package churiann.project.business.exporters;
 
 public class ExporterFactory {
     public IExporter createExporter(String name) {

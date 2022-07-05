@@ -1,4 +1,4 @@
-package churiann.project.business.export;
+package churiann.project.business.exporters;
 
 import churiann.project.dao.StatisticsRepository;
 import com.google.gson.Gson;

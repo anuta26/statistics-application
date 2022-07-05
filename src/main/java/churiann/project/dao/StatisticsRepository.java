@@ -21,11 +21,4 @@ public class StatisticsRepository {
     public void setStatistics(List<Statistics> statistics) {
         this.statistics = statistics;
     }
-
-    @Override
-    public String toString() {
-        return "StatisticsRepository{" +
-                "statistics=" + statistics +
-                '}';
-    }
 }
