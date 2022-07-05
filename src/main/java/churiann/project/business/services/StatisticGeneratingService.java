@@ -1,4 +1,4 @@
-package churiann.project.business;
+package churiann.project.business.services;
 
 import churiann.project.business.makers.IStatisticsMaker;
 import churiann.project.business.makers.StatisticsMakerFactory;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Service generates all required statistics, which would be saved. */
-public class StatisticGenerating {
+public class StatisticGeneratingService {
 
     private final RecordRepository recordRepository;
 
-    public StatisticGenerating(RecordRepository recordRepository) {
+    public StatisticGeneratingService(RecordRepository recordRepository) {
         this.recordRepository = recordRepository;
     }
 

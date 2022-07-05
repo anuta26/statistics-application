@@ -1,4 +1,4 @@
-package churiann.project.business;
+package churiann.project.business.services;
 
 import churiann.project.domain.Record;
 import com.opencsv.CSVReader;
@@ -16,7 +16,7 @@ import java.util.List;
 
 /** Service takes data from the input file (format : *.csv)
  * and parse them to Records, which would be saved.*/
-public class Import {
+public class ImportService {
 
     public List<Record> importDataFromFile(String nameOfInputFile) {
         try {

@@ -1,6 +1,6 @@
 package churiann.project;
 
-import churiann.project.business.ApplicationProcess;
+import churiann.project.business.services.ApplicationProcessService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +28,8 @@ public class StatisticsApplication {
         List<String> namesOfStatistics = parseInput(args[1]);
         List<String> namesOfFormats = parseInput(args[2]);
 
-        ApplicationProcess applicationProcess = new ApplicationProcess();
-        applicationProcess.run(nameOfInputFile, namesOfStatistics, namesOfFormats);
+        ApplicationProcessService applicationProcessService = new ApplicationProcessService();
+        applicationProcessService.run(nameOfInputFile, namesOfStatistics, namesOfFormats);
     }
 
 }

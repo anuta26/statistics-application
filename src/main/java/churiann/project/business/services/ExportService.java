@@ -1,4 +1,4 @@
-package churiann.project.business;
+package churiann.project.business.services;
 
 import churiann.project.business.exporters.ExporterFactory;
 import churiann.project.business.exporters.IExporter;
@@ -9,15 +9,14 @@ import java.io.IOException;
 import java.util.List;
 
 /** Service allows to export all statistics to files with required formats.*/
-public class Export {
+public class ExportService {
     StatisticsRepository statisticsRepository;
 
-    public Export(StatisticsRepository statisticsRepository) {
+    public ExportService(StatisticsRepository statisticsRepository) {
         this.statisticsRepository = statisticsRepository;
     }
 
     public void exportStatistics(List<String> nameOfFormats) {
-
         // creation of the directory, where files with statistics would be added
         String directoryToExport = "exportedStatistics";
         File theDir = new File(directoryToExport);
