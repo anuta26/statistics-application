@@ -4,7 +4,7 @@ public class ExporterFactory {
     public IExporter createExporter(String name) {
         return switch (name) {
             case "JSON" -> new JsonExporter();
-            case "CsvExporter" -> new CsvExporter();
+            case "CSV" -> new CsvExporter();
             default -> null;
         };
     }
