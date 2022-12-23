@@ -3,6 +3,7 @@ package churiann.project.business.services;
 import churiann.project.domain.Record;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,6 +19,8 @@ import java.util.List;
 /** Service takes data from the input file (format : *.csv)
  * and parse them to Records, which would be saved.*/
 public class ImportService {
+
+    private static final Logger logger = Logger.getLogger(ImportService.class.getName());
 
     public List<Record> importDataFromFile(String nameOfInputFile) {
         try {
@@ -45,13 +48,13 @@ public class ImportService {
                 return records;
             }
         } catch (FileNotFoundException fileNotFoundException) {
-            System.err.println("Can not find file");
+            logger.error("Can not find file");
             System.exit(1);
         } catch (CsvValidationException csvValidationException) {
-            System.err.println("Wrong format of the input file");
+            logger.error("Wrong format of the input file");
             System.exit(1);
         } catch (IOException ioException) {
-            System.err.println("Can not read from file");
+            logger.error("Can not read from file");
             System.exit(1);
         }
         return Collections.emptyList();

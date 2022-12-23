@@ -1,12 +1,15 @@
 package churiann.project;
 
 import churiann.project.business.services.ApplicationProcessService;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class StatisticsApplication {
+
+    private static final Logger logger = Logger.getLogger(StatisticsApplication.class.getName());
 
     public static List<String> parseInput(String input) {
         List<String> result = new ArrayList<>();
@@ -21,7 +24,7 @@ public class StatisticsApplication {
 
     public static void main(String[] args) {
         if (args.length != 3) {
-            System.err.println("Invalid arguments");
+            logger.error("Invalid arguments");
             System.exit(1);
         }
 

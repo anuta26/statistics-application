@@ -2,6 +2,7 @@ package churiann.project.business.services;
 
 import churiann.project.dao.RecordRepository;
 import churiann.project.dao.StatisticsRepository;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -9,25 +10,27 @@ import java.util.List;
 
 public class ApplicationProcessService {
 
+    private static final Logger logger = Logger.getLogger(ApplicationProcessService.class.getName());
+
     private final RecordRepository recordRepository = new RecordRepository();
     private final StatisticsRepository statisticsRepository = new StatisticsRepository();
 
     public void run(String nameOfInputFile, List<String> namesOfStatistics, List<String> namesOfFormats) {
         ImportService anImport = new ImportService();
         recordRepository.setRecords(anImport.importDataFromFile(nameOfInputFile));
-        System.out.println("Records have been imported from file");
+        logger.info("Records have been imported from file");
 
         StatisticGeneratingService statisticGenerating = new StatisticGeneratingService(recordRepository);
         statisticsRepository.setStatistics(statisticGenerating.makeStatistics(namesOfStatistics));
         if (statisticsRepository.getStatistics().isEmpty()) {
-            System.out.println("There is not any statistics generated");
+            logger.warn("There is not any statistics generated");
             return;
         }
-        System.out.println("All statistics have been generated");
+        logger.info("All statistics have been generated");
 
         ExportService anExport = new ExportService(statisticsRepository);
         anExport.exportStatistics(namesOfFormats);
-        System.out.println("Export has been done");
+        logger.info("Export has been done");
     }
 }
 
