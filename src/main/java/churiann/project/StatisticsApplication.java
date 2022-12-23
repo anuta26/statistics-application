@@ -10,12 +10,13 @@ public class StatisticsApplication {
 
     public static List<String> parseInput(String input) {
         List<String> result = new ArrayList<>();
-        Scanner scanner = new Scanner(input);
-        scanner.useDelimiter(",");
-        while (scanner.hasNext()) {
-            result.add(scanner.next());
+        try (Scanner scanner = new Scanner(input)){
+            scanner.useDelimiter(",");
+            while (scanner.hasNext()) {
+                result.add(scanner.next());
+            }
+            return result;
         }
-        return result;
     }
 
     public static void main(String[] args) {

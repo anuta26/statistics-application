@@ -8,7 +8,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/** Service allows to export all statistics to files with required formats.*/
+/**
+ * Service allows to export all statistics to files with required formats.
+ */
 public class ExportService {
     StatisticsRepository statisticsRepository;
 
@@ -20,11 +22,9 @@ public class ExportService {
         // creation of the directory, where files with statistics would be added
         String directoryToExport = "exportedStatistics";
         File theDir = new File(directoryToExport);
-        if (!theDir.exists()) {
-            if (!theDir.mkdirs()) {
-                System.err.println("Can not create a directory");
-                System.exit(1);
-            }
+        if (!theDir.exists() && !theDir.mkdirs()) {
+            System.err.println("Can not create a directory");
+            System.exit(1);
         }
 
         for (String name : nameOfFormats) {

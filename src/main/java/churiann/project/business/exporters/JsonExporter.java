@@ -10,9 +10,9 @@ import java.nio.file.Path;
 public class JsonExporter implements IExporter {
     @Override
     public void exportStatistics(StatisticsRepository statistics, String directoryToExport) throws IOException {
-        FileWriter fWriter = new FileWriter(
-                Path.of(directoryToExport, "statistics.json").toAbsolutePath().toString());
-        fWriter.write(new Gson().toJson(statistics));
-        fWriter.close();
+        try (FileWriter fWriter = new FileWriter(
+                Path.of(directoryToExport, "statistics.json").toAbsolutePath().toString())){
+            fWriter.write(new Gson().toJson(statistics));
+        }
     }
 }

@@ -27,6 +27,10 @@ public class AverageNumberOfCyclistsPerDayStatisticsMaker implements IStatistics
             summary += entry.getValue();
             totalNumber += 1;
         }
+        if (totalNumber == 0) {
+            averageNumber = totalNumber;
+            return new Statistics("Average number of cyclists passed per day", String.valueOf(averageNumber));
+        }
         averageNumber = summary / totalNumber;
         return new Statistics("Average number of cyclists passed per day", String.valueOf(averageNumber));
     }
