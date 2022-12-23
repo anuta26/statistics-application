@@ -25,7 +25,7 @@ public class StatisticsApplication {
             System.exit(1);
         }
 
-        String nameOfInputFile = args[0].substring(0, args[0].length() - 1);
+        String nameOfInputFile = args[0];
         List<String> namesOfStatistics = parseInput(args[1]);
         List<String> namesOfFormats = parseInput(args[2]);
 
